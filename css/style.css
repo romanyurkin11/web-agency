@@ -407,7 +407,7 @@ ul{
 
     .header__navbar__mobile.open{
        position: fixed;
-       top: 124px;
+       top: 100px;
        left: 0;
        text-align: center;
        width: 100%;
@@ -415,6 +415,10 @@ ul{
        z-index: 3;        
        height: 100vh;
        background-color: #1C1E53;;
+    }
+
+    .no-scroll{
+        overflow: hidden;
     }
 
 
@@ -473,6 +477,16 @@ ul{
         height: 2px;
         position: absolute;
         top: 9px;
+    }
+
+    .main-screen{
+        width: 80%;
+        margin: 30px 0 0 0;
+        text-align: center;
+    }
+
+    .mainscreen__body{
+        flex-direction: column-reverse;
     }
 
 }
