@@ -437,7 +437,7 @@ ul {
 .project__second .project__item_title, .project__third .project__item_title{
     font-weight: 600;
     font-size: 24px;
-    line-height: calc(46/24*100%);
+    line-height: calc(36/24*100%);
     color: #FFFFFF;
 }
 
@@ -557,6 +557,15 @@ ul {
 	.workstages__subtitle {
 		margin: 8px 0 0 0;
 	}
+
+    .projects-grid__item{
+        background-position: center;
+    }
+
+    .project__second .project__item_content, 
+    .project__third .project__item_content {
+        padding: 0 36px 40px 36px;
+    }
 }
 
 
@@ -573,7 +582,36 @@ ul {
 	.button-contact {
 		display: none;
     }
-	}
+
+    .project__second{
+        grid-area: second;
+    }
+
+    .project__first{
+        grid-area: first;
+    }
+
+    .project__third{
+        grid-area: third;
+        height: auto;
+    }
+
+    .projects-grid{
+        grid-template-rows: repeat(2, 300px);
+        grid-template-areas: 
+        'second second third'
+        'first first first';
+    }
+    
+    .project__first .project__item_content {
+        padding: 0 30px 40px 30px;
+    }
+
+    .project__second .project__item_content, 
+    .project__third .project__item_content {
+        padding: 0 15px 40px 15px;
+    }
+}
 
 /* Tablet resolution */
 @media (max-width: 767px) {
@@ -680,6 +718,41 @@ ul {
 	.mainscreen__body {
 		flex-direction: column-reverse;
 	}
+
+    .projects__container{
+        padding: 80px 20px;
+    }
+
+    .projects__header__title{
+        font-size: 32px;
+    }
+
+    .projects-grid{
+        grid-template-areas: 
+            'second second third third'
+            'first first first first';
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .project__first .project__item_button{
+        margin-top: 25px;
+    }
+
+    .project__first .project__item_content{
+        padding: 0 25px 25px 25px;
+    }
+    
+    .projects__header{
+        flex-direction: column;
+    }
+
+    .projects__header__button{
+        margin-top: 10px;
+    }
+
+    .projects__header__button:hover{
+        text-decoration: none;
+    }
 }
 
 
@@ -706,4 +779,25 @@ ul {
 	.workstages_list {
 		grid-template-columns: 1fr;
 	}
+
+    .projects-grid{
+        grid-template-rows: repeat(3, 250px);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+        'first'
+        'second'
+        'third';
+    }
+
+    .project__first:hover > .project__item_content{
+        width: 100%;
+    }
+    
+    .project__first .project__item_text{
+        display: none;
+    }
+
+    .project__first .project__item_button{
+        margin-top: 0;
+    }
 }
