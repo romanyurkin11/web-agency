@@ -4,9 +4,22 @@ var slideIndex = 1;
 var slides = document.getElementsByClassName('slider__item');
 
 
-// var plusSlide = (n) => {
-//     showSlides(n)
-// }
+var questionsItems = document.getElementsByClassName('q-menu__item');
+
+for(i=0; i < questionsItems.length; i++){
+    questionsItems[i].addEventListener("click", function(){
+        for(j=0; j < questionsItems.length; j++){
+            if(i == j){
+                continue;
+            }else{
+                questionsItems[j].classList.remove('active');
+            }
+        }
+        this.classList.toggle("active");
+    });
+}
+
+
 
 var plusSlide = (num) => {
     for(i = 0; i < slides.length; i++){
@@ -22,3 +35,5 @@ var plusSlide = (num) => {
     console.log(slideIndex);
     slides[slideIndex-1].classList.add('active');
 }
+
+
