@@ -8,8 +8,9 @@ var questionsItems = document.getElementsByClassName('q-menu__item');
 
 for(i=0; i < questionsItems.length; i++){
     questionsItems[i].addEventListener("click", function(){
-        for(j=0; j < questionsItems.length; j++){
+        for(j=0; j < questionsItems.length-1; j++){
             if(i == j){
+                //this.classList.add("active");
                 continue;
             }else{
                 questionsItems[j].classList.remove('active');
@@ -32,8 +33,8 @@ var plusSlide = (num) => {
     else if(slideIndex < 1){
         slideIndex = slides.length
     }
-    console.log(slideIndex);
     slides[slideIndex-1].classList.add('active');
+    console.log(slideIndex);
 }
 
 
